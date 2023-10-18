@@ -27,10 +27,12 @@ const getHardestHomework = function(obj){
     }   
 }
      
-  const createPhonebook = function(obj){
+  const createPhonebook = function(name, number){
     let phoneBook = []
-    for(let i = 0; i < obj.[0].length; i++){
-        phoneBook.push(obj.[0][i], obj.[1][i])
+   let name = obj[0[i]]
+   let number = obj[1[i]]
+   for(let i = 0; i < name.length; i++){
+     phoneBook.push(name[i], number[i])
           }
     return phoneBook
 }  
