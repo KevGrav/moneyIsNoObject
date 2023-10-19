@@ -1,41 +1,44 @@
 // ┌─────────────────┐
 // │ Your code here! │	
 // └─────────────────┘
-const isAdmin = function(obj){
-    return obj.userRole === 'ADMIN'
+function isAdmin(user){
+    return user.userRole === 'ADMIN'
 }
 
-const getEmail = function(obj){
-    let firstInitial = obj.firstName[0].toLowerCase()
-    let lowerCaseLastName = obj.lastName.toLowerCase()
+function getEmail(user){
+    let firstInitial = user.firstName.toLowerCase()[0]
+    let lowerCaseLastName = user.lastName.toLowerCase()
     return firstInitial + lowerCaseLastName + '.prsvr@gmail.com'
+    // or return `${firstInitial}${lowerCaseLastName}.prsvr@gmail.com`
 }
 
-const getPlaylistLength = function(obj){
-    return obj.songs.length
+const getPlaylistLength = function(playList){
+    return playList.songs.length
 }
 
-const getHardestHomework = function(obj){
-    let num = 0
-    for(let num of obj.averageScore){
-    if (obj.averageScore[i] < num){
-    num = obj.averageScore[i]; 
-    i++;
-    }else{
-       return obj.name[i]
+const getHardestHomework = function(arr){
+    if(arr.length === 0){
+        return ''
+    }
+    let hardestHomework = arr[0].name
+    let lowestScore = arr[0].averageScore
+  
+    for(let i=1; i<arr.length; i++){
+        if (arr[i].averageScore < lowestScore){
+            lowestScore = arr[i].averageScore
+            hardestHomework = arr[i].name 
         }
-    }   
-}
+    }
+    return hardestHomework    
+  } 
      
-  const createPhonebook = function(name, number){
-    let phoneBook = []
-   let name = obj[0[i]]
-   let number = obj[1[i]]
-   for(let i = 0; i < name.length; i++){
-     phoneBook.push(name[i], number[i])
-          }
-    return phoneBook
-}  
+  const createPhonebook = function(names, numbers){
+    let phonebook = {};
+    for(let i = 0; i < names.length; i++){
+        phonebook[names[i]] = numbers[i]
+    }
+    return phonebook
+  }
 
 
 
